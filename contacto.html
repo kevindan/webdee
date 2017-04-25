@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>DEE-Consultores - QUIENES SOMOS</title>
+<meta name="Description" content="DEE Consultores" />
+<meta name="Author" content="Manuel Chavez Castro - manuel.chc@gmail.com" />
+
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="expires" content="-1" />
+<link href="style.css" type="text/css" rel="stylesheet" media="all"/>
+<script type="text/javascript" src="script/jquery-1.6.2.js"></script>
+<link href="greybox/gb_styles.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript">
+var GB_ROOT_DIR = "greybox/";
+</script>
+<script type="text/javascript" src="greybox/AJS.js"></script>
+<script type="text/javascript" src="greybox/AJS_fx.js"></script>
+<script type="text/javascript" src="greybox/gb_scripts.js"></script>
+<script type="text/javascript" language="javascript">
+function validacorreo(cadena) 
+{	arroba = false;
+	punto = false;
+	for (i = 0; i <= cadena.length - 1; i++) 
+	{	if (cadena.charAt(i) == "@") arroba = true;
+		if (cadena.charAt(i) == ".") punto = true;
+	}
+	if (!arroba ) return false; 
+	if (!punto ) return false; 
+  	return true;
+}
+
+function Enviar_Comentario()
+{	if (frmEnviar_Comentario()) frmContacto.submit();	}
+
+function frmEnviar_Comentario()
+{	if (frmContacto.nombre.value == "")
+	{	alert("Por favor, introdusca nombre y apellido");
+		frmContacto.nombre.focus();
+		return false;	
+	}
+	if (frmContacto.email.value == "")
+	{	alert("Por favor, introdusca su E-mail");
+		frmContacto.email.focus();
+		return false;	
+	}
+	else
+	{	if ( !validacorreo(frmContacto.email.value))
+		{	alert("Ingresar correctamente el E-mail");
+			frmContacto.email.focus();
+			return false;
+		}
+	}
+	if (frmContacto.comentario.value == "")
+	{	alert("Por favor, introdusca sus comentarios");
+		frmContacto.comentario.focus();
+		return false;	
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+  <div class="cuerpo">
+    <div class="cabecera">
+      <div class="logo"><a href="index.html"><img src="imagenes/logo-dee.gif" width="233" height="72" title="DEE Consultores" /></a></div>
+      <div class="nav">
+        <ul>
+          <li><a href="qsomos.html">QUIÉNES SOMOS</a></li>
+          <li><a href="servicios_fproyectos.html">SERVICIOS</a></li>
+          <li><a href="clientes.html">CLIENTES</a></li>
+          <li><a href="equipo_avelazco.html">EQUIPO</a></li>
+<li><a href="consultas.html">CONSULTAS</a></li>
+          <li class="li-ultimo navOn"><a href="#" style="color: #B0B0B0;">CONTÁCTENOS</a></li>
+        </ul>
+      </div>
+      <div class="limpiar"></div>
+    </div>
+    <!--fin cabecera-->
+    <div style="margin: 0; height: 300px; width: 960px;"><img src="imagenes/contacto.jpg" title="DEE Consultores - Estrategía" /></div>
+    <div class="content">
+      <div class="col-izq izq">
+        <div class="sec-quienesomos2">
+          <h1>CONTÁCTENOS</h1>
+          <div class="texto ">
+            <form name=frmContacto method=post action="respuesta.php">
+			<input type="Hidden" name="accion" value="Email">
+			<table cellpadding="0" cellspacing="0" border="0" align="center">
+			<tr>
+			  <td width="150" height="20"><span style="color: #134060;">Nombre y Apellido (*)</span></td>
+			  <td width="445" height="20" align="right"><input name="nombre" type="text" class="buscar_cajaTxt" /></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+			  <td height="20"><span style="color: #134060;">E-mail (*)</span></td>
+			  <td height="20" align="right"><input type="text" name="email"  class="buscar_cajaTxt"  />	  </td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+			  <td height="20"><span style="color: #134060;">Tel&eacute;fono</span></td>
+			  <td height="20" align="right"><input type="text" name="telefono"  class="buscar_cajaTxt"  /></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+			  <td>&nbsp;</td>
+			  <td align="right"><textarea name="comentario" rows="5"  class="buscar_cajaTxt1" ></textarea></td>
+			</tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr><td height="20" colspan="2"><span style="color: #134060;">(*)<i> Información obligatoria</span></i></td></tr>
+			<tr><td colspan="2">&nbsp;</td></tr>
+			<tr>
+			  <td colspan="2" height="20" align="right">
+			  <table cellpadding="0" cellspacing="0" border="0">
+			  <tr>
+			  	<td><input type="button" title="Borrar contenido" onclick="javascript:frmContacto.reset();" name="btnBorrar" value="Limpiar" onmouseover="javascript: this.className='EstiloBoton_Over'" onmousedown="javascript: this.className='EstiloBoton'" onblur="javascript: this.className='EstiloBoton'" onfocus="javascript: this.className='EstiloBoton_Over'" onmouseout="javascript: this.className='EstiloBoton'" class="EstiloBoton" style="width:100px"></td>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				<td><input type="button" title="Enviar contenido" onclick="javascript:Enviar_Comentario();" name="btnEnviar" value="Enviar" onmouseover="javascript: this.className='EstiloBoton_Over'" onmousedown="javascript: this.className='EstiloBoton'" onblur="javascript: this.className='EstiloBoton'" onfocus="javascript: this.className='EstiloBoton_Over'" onmouseout="javascript: this.className='EstiloBoton'" class="EstiloBoton" style="width:100px"></td>
+			  </tr>
+			  </table>
+			  </td>
+			  </tr>
+			</table>
+			</form>
+          </div>
+          <div class="limpiar"></div>
+        </div>
+      </div>
+      <!--fin col-izq-->
+      <div class="col-der der">
+        <div class="sec-resumen">
+          <div class="texto">
+		  <table cellpadding="0" cellspacing="0" border="0">
+		  <tr>
+		  	<td valign="top"><img src="imagenes/googgle.jpg" width="37" height="36" title="Ver en google map"></td>
+			<td><a href="contacto_map.html" title="Google Map" rel="gb_page_center[540, 440]" style="text-decoration: underline;"><b>Calle Los Cedro Nº 285 San Isidro - Lima</a><p><br><br>
+		  (511) 322 0329 <br>
+		  <a href="mailto:contacto@deeconsultores.pe">contacto@deeconsultores.pe</a><br>
+		  <a href="http://www.deeconsultores.pe">www.deeconsultores.pe</a></td>
+		  </tr>
+		  </table>
+          </div>
+        </div>
+        <!--fin sec-articulos--> 
+      </div>
+      <div class="limpiar"></div>
+    </div>
+    <!--fin content-->
+    
+    <div class="footer">
+      <div class="foo-1 izq">
+        <ul>
+          <li class="inicio"><a href="index.html">INICIO</a></li>
+          <li class="qsomos"><a href="qsomos.html">QUIÉNES SOMOS</a></li>
+          <li class="servicios"><a href="servicios_fproyectos.html">SERVICIOS</a></li>
+          <li class="clientes"><a href="clientes.html">CLIENTES</a></li>
+          <li class="equipo"><a href="equipo_avelazco.html">EQUIPO</a></li>
+        </ul>
+      </div>
+      <div class="foo-2 izq"></div>
+      <div class="foo-2-1 izq"></div>
+      
+      <!--codigo script--> 
+      <script type="text/javascript">
+	  jQuery("div.foo-1 ul li.servicios a").hover(function () {
+	  	jQuery("div.foo-2").html("<a href='servicios_fproyectos.html#se'>Formulación de proyectos</a> <a href='servicios_ingenieria.html#se'>Elaboración de estudios de ingeniería de detalle</a> <a href='servicios_esupervision.html#se'>Evaluación y supervisión de proyectos</a> <a href='servicios_acontratos.html#se'>Administración de contratos</a> <a href='servicios_tespecializadas.html#se'>Traducciones especializadas</a> <a href='servicios_presupuesto.html#se'>Programas presupuestales</a> <a href='servicios_riesgo.html#se'>Análisis institucionales y de riesgos</a> <a href='servicios_economia.html#se'>Estudios Económicos</a>");
+      });
+	  jQuery("div.foo-1 ul li.inicio a").hover(function () {
+	  	jQuery("div.foo-2").html("");
+      });
+	  jQuery("div.foo-1 ul li.qsomos a").hover(function () {
+	  	jQuery("div.foo-2").html("");
+      });
+	  jQuery("div.foo-1 ul li.clientes a").hover(function () {
+	  	jQuery("div.foo-2").html("");
+      });
+	  jQuery("div.foo-1 ul li.equipo a").hover(function () {
+	  	jQuery("div.foo-2").html("");
+      });
+	  jQuery("div.foo-2-1").hover(function () {
+	  	jQuery("div.foo-2").html("");
+      });
+	  </script> 
+      <!--codigo script-->
+      
+      <div class="foo-3 izq"> <img src="imagenes/logo-dee-2.gif" width="125" height="40" />Administración y Proyectos:<br />(511) 322 0329 - (511) 322 0330<br />
+        <a href="mailto:contacto@deeconsultores.pe">contacto@deeconsultores.pe</a> </div>
+      <div class="foo-4 izq">
+        <ul>
+          <li class="face"><a href="https://www.facebook.com/deeconsultoresestrategicos?fref=ts" target="_blank"><img src="imagenes/blank.png" width="24" height="24" /></a></li>
+          <li class="twit"><a href="#" target="_blank"><img src="imagenes/blank.png" width="24" height="24" /></a></li>
+          <li class="linke"><a href="#" target="_blank"><img src="imagenes/blank.png" width="24" height="24" /></a></li>
+        </ul>
+      </div>
+      <div class="creditos"> Copyright &copy; 2013 DEE consultores. Todos los derechos reservados. </div>
+      <div class="limpiar"></div>
+    </div>
+    <!--fin footer-->
+    <div class="limpiar"></div>
+  </div>
+  <!--fin cuerpo--> 
+  
+</div>
+<!--fin wrapper-->
+
+</body>
+</html>
